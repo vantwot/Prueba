@@ -1,9 +1,11 @@
 from django.shortcuts import render
+import requests
 from django.shortcuts import render, get_object_or_404
 from Blog.models import *
 from django.http import JsonResponse
 from .forms import *
 from django.contrib.auth.hashers import make_password, check_password
+
 
 # Create your views here.
 
@@ -46,3 +48,23 @@ def crear_usuario(request):
 def login(request):
     return render(request, 'login.html')
 
+def noticias(request):
+    url = 'https://newsapi.org/v2/everything?q=Cryptocurrency&from=2022-07-26&sortBy=popularity&apiKey=5aeb68fdf65048cc918a20f6d34b2cbd'
+
+    crypto_news = requests.get(url).json()
+
+    a = crypto_news['articles']
+    desc =[]
+    title =[]
+    img =[]
+
+    for i in range(len(a)):
+        f = a[i]
+        title.append(f['title'])
+        desc.append(f['description'])
+        img.append(f['urlToImage'])
+    mylist = zip(title, desc, img)
+
+    context = {'mylist': mylist}
+
+    return render(request, 'noticias.html', context)
