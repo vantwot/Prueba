@@ -22,5 +22,6 @@ urlpatterns = [
     path('', views.login),
     path('login/',  views.ingresar),
     path('crear_usuario/', views.crear_usuario),
-    path('noticias/', include('Blog.urls'))
+    path('noticias/', include('Blog.urls')),
+    path('tiempo/', include('Blog.urls'))
 ]
