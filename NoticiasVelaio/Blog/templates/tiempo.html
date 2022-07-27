@@ -16,36 +16,15 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="noticias/">Noticias</a>
+                <a class="nav-link active" aria-current="page" href="">Noticias</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="tiempo/">Tiempo</a>
+                <a class="nav-link active" aria-current="page" href="">Tiempo</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-offset-4 is-4">
-                    <form method="POST">
-                        {% csrf_token %}
-                        <div class="field has-addons">
-                            <div class="control is-expanded">
-                                {{ form.name }}
-                            </div>
-                            <div class="control">
-                                <button class="button is-info">
-                                    Add City
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="section">
         <div class="container">
             <div class="rows">

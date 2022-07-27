@@ -4,20 +4,17 @@
     </head>
     <body>
         <h1>Ingreso de usuarios</h1>
-        <br>
-        <h2>Ingresar</h2>
-        <br>
-        <form action="login/" method="post">
+        <form action="noticias/noticias/" method="post">
             {% csrf_token%}
             <label>Usuario</label>
             <input type="text" name="nombre_ingreso">
             <label>Contraseña</label>
-            <input type="text" name="password">
+            <input type="password" name="password">
             <input type="submit" value="enviar">
         </form>
         <br>
-
-        <br>
+<!--
+ <br>
         <h2>Crear</h2>
         <br>
         <form action="crear_usuario/" method="POST">
@@ -29,5 +26,8 @@
             <input type="submit" value="enviar">
         </form>
         <br>
+
+-->
     </body>
-</htm
+</htm>
+
